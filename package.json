@@ -6,8 +6,7 @@
     "api",
     "typescript",
     "framework",
-    "lightweight",
-    "modular"
+    "lightweight"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
