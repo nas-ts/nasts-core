@@ -26,13 +26,11 @@ export class App {
 
   public start(): void {
     const port = this.options?.port || 3000;
-    if (this.options.onListen) {
-      this._expressApp.listen(port, this.options.onListen);
-    } else {
-      this._expressApp.listen(port, () => {
-        console.log(`Listening on ${port}`);
-      });
-    }
+    this._expressApp.listen(
+      port,
+      this.options.onListen ||
+        (() => console.log(`Listening on port: ${port}`)),
+    );
   }
 
   private setMiddleware(): void {
@@ -40,28 +38,23 @@ export class App {
       this._expressApp.use(cors());
     }
 
-    if (this.options.middleware) {
-      for (const middleware of this.options.middleware) {
-        this._expressApp.use(middleware);
-      }
-    }
+    this.options.middleware?.forEach((middleware) =>
+      this._expressApp.use(middleware),
+    );
   }
 
   private setRoutes(): void {
-    if (this.options.controllers) {
-      for (const controller of this.options.controllers) {
-        const path = getControllerMetadata('controller', controller);
-        const auth = getAuthMetadata('auth', controller);
-        if (path) {
-          const router = this.buildRouter(controller.prototype);
-          if (auth && this.options.auth) {
-            this._expressApp.use(path, this.options.auth, router);
-          } else {
-            this._expressApp.use(path, router);
-          }
-        }
-      }
-    }
+    if (!this.options.controllers) return;
+
+    this.options.controllers.forEach((controller) => {
+      const path = getControllerMetadata('controller', controller);
+      const auth = getAuthMetadata('auth', controller);
+      if (!path) return;
+
+      const router = this.buildRouter(controller.prototype);
+      const middleware = auth && this.options.auth ? [this.options.auth] : [];
+      this._expressApp.use(path, ...middleware, router);
+    });
   }
 
   private buildRouter(controllerPrototype: any): Router {

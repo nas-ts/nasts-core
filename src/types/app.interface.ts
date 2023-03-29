@@ -9,6 +9,6 @@ export interface IAppOptions {
   corsEnabled?: boolean;
   auth?: IMiddlewareFunction;
   middleware?: IMiddlewareFunction[];
-  controllers?: any;
+  controllers?: (new (...args: any[]) => any)[];
   onListen?: () => void;
 }

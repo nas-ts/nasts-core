@@ -1,9 +1,24 @@
 <p align="center">
-  <img width="150" height="150" src="https://github.com/nas-ts/nasts-core/blob/master/readme_assets/logo.png">
+  <img width="150" height="150" src="./readme_assets/logo.png">
 </p>
+
 <h1 align="center">
-NAS.TS
+  NAS.TS
 </h1>
+
+<div align="center" style="display:flex;flex-wrap:wrap;justify-content:center;">
+
+  <img style="padding: 5px;" alt="npm (scoped)" src="https://img.shields.io/npm/v/@nasts/core?style=plastic">
+
+  <img style="padding: 5px;" alt="npm bundle size (scoped)" src="https://img.shields.io/bundlephobia/min/@nasts/core?style=plastic">
+
+  <img style="padding: 5px;" alt="NPM" src="https://img.shields.io/npm/l/@nasts/core?style=plastic">
+
+  <img style="padding: 5px;" alt="npm" src="https://img.shields.io/npm/dt/@nasts/core?style=plastic">
+
+  <img style="padding: 5px;" alt="Libraries.io dependency status for latest release, scoped npm package" src="https://img.shields.io/librariesio/release/npm/@nasts/core?style=plastic">
+
+</div>
 
 `@nasts/core` is a TypeScript package built on top of the popular Express web framework. It provides a lightweight and flexible approach to building web applications by extending the capabilities of Express with a set of tools and utilities that make it easy to handle requests, manage routes, and integrate with other libraries and frameworks.
 
