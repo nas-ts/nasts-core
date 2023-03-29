@@ -1,7 +1,14 @@
 {
   "name": "@nasts/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core package for a nasts app",
+  "keywords": [
+    "api",
+    "typescript",
+    "framework",
+    "lightweight",
+    "modular"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,7 +20,7 @@
     "prepublishOnly": "npm run build"
   },
   "author": "Oliver Richman",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
