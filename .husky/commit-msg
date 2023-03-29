@@ -1,0 +1,9 @@
+#!/bin/sh
+
+branch_name=$(git symbolic-ref --short HEAD)
+commit_msg=$(cat $1)
+
+if ! echo "$commit_msg" | grep -q "^$branch_name: "; then
+  echo "Commit message should start with '$branch_name: '"
+  exit 1
+fi
