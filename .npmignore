@@ -2,10 +2,8 @@ __tests__/
 coverage/
 src/
 node_modules/
-readme_assets/
 tsconfig.json
 .eslintrc.js
 .gitignore
 .prettierrc
-README.md
 CONTRIBUTING.md
