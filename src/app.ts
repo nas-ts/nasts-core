@@ -22,6 +22,7 @@ export class App {
     this._expressApp.use(express.json());
     this.setMiddleware();
     this.setRoutes();
+    console.log('test');
   }
 
   public start(): void {
