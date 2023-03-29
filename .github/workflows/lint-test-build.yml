@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Lint, Test and Build
 
 on:
   push:
@@ -7,49 +7,36 @@ on:
     branches: [master]
 
 jobs:
-  lint:
+  lint-test-build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 19.6.0]
+        node-version: [16.x, 18.x]
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run lint
-  test:
-    runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 19.6.0]
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Cache node modules
+        uses: actions/cache@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
-  build:
-    runs-on: ubuntu-latest
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 19.6.0]
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
+        run: npm run build
