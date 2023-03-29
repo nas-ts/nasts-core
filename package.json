@@ -1,6 +1,6 @@
 {
   "name": "@nasts/core",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Core package for a nasts app",
   "keywords": [
     "api",
@@ -23,7 +23,6 @@
   "license": "MIT",
   "devDependencies": {
     "@types/cors": "^2.8.13",
-    "@types/express": "^4.17.17",
     "@types/jest": "^29.5.0",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
@@ -55,6 +54,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "@types/express": "^4.17.17"
   }
 }
