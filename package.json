@@ -1,7 +1,7 @@
 {
   "name": "@nasts/core",
   "version": "1.0.0",
-  "description": "",
+  "description": "Core package for a nasts app",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,7 +12,7 @@
     "test": "jest --coverage",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "author": "Oliver Richman",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
