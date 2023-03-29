@@ -22,7 +22,7 @@ export class App {
     this._expressApp.use(express.json());
     this.setMiddleware();
     this.setRoutes();
-    console.log('Testing out a pipeline 1');
+    console.log('test');
   }
 
   public start(): void {
