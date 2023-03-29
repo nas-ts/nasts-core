@@ -1,0 +1,40 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - publish
+  pull_request:
+    types:
+      - closed
+    branches:
+      - publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check if version has changed
+        run: |
+          if [[ $(npm version --json | jq -r '.version') == "${{ github.event_name }}-${{ github.ref }}-" ]]; then
+            echo "Version has not changed. Skipping npm publish."
+            exit 0
+          fi
+
+      - name: Publish to npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc
+          npm publish --access=public
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
