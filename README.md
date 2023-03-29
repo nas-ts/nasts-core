@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="150" height="150" src="./readme_assets/logo.png">
+  <img width="150" height="150" src="https://raw.githubusercontent.com/nas-ts/nasts-core/master/readme_assets/logo.png">
 </p>
 
 <h1 align="center">
