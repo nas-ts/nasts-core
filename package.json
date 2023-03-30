@@ -1,6 +1,6 @@
 {
   "name": "@nasts/core",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Core package for a nasts app",
   "keywords": [
     "api",
