@@ -1,5 +1,5 @@
-<div
-	style="display: flex; align-items: center; justify-content: center; padding: 10px;"
+<p
+	align="center"
 >
 	<img
 		width="150"
@@ -8,14 +8,14 @@
 		style="vertical-align: middle;"
 	>
 	<div style="margin-left: 30px; display: flex; flex-direction: column;">
-	<p style="font-weight: bold; font-size: 42px; margin: 0">
+	<p align="center" style="font-weight: bold; font-size: 42px; margin: 0">
 		nasts
 	</p>
-	<p style="margin: 0;">
+	<p align="center" style="margin: 0;">
 		Strong typing. Strong backend.
 	</p>
 	</div>
-</div>
+</p>
 
 ---
 
@@ -43,7 +43,19 @@ With `@nasts/core`, you can quickly set up your project and get started with Typ
 
 We welcome any feedback or contributions from the community, and we hope that you find this package useful in your own projects.
 
+<br />
+
 ## Installation
+
+### Using the CLI
+
+nasts has a handy CLI you can use to quickly set up a project with everything you need to get started, it's recommended that you do this, you can find out more here:
+
+### [@nasts/cli](https://www.npmjs.com/package/@nasts/cli)
+
+<br />
+
+### Using manually
 
 Install `@nasts/core` with npm into your project directory:
 
@@ -62,9 +74,13 @@ app.start();
 
 Please see the documentation for details on how to make use of controllers, middleware, and other configurations.
 
+<br />
+
 ## Authors
 
 - [@oliver-richman](https://www.github.com/oliver-richman) - Creator
+
+<br />
 
 ## Contributing
 
