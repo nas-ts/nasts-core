@@ -6,4 +6,5 @@ export interface IRouterMethodArguments {
   next: NextFunction;
   params: { [key: string]: string };
   headers: any;
+  body: any;
 }

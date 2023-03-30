@@ -81,6 +81,7 @@ export class App {
                 next,
                 params: this.getParams(request),
                 headers: this.getHeaders(request),
+                body: this.getBody(request),
               };
               response.send(
                 controllerPrototype[functionName](routerMethodArgs),
@@ -97,6 +98,7 @@ export class App {
                 next,
                 params: this.getParams(request),
                 headers: this.getHeaders(request),
+                body: this.getBody(request),
               };
               response.send(
                 controllerPrototype[functionName](routerMethodArgs),
@@ -115,5 +117,9 @@ export class App {
 
   private getHeaders(request: Request): any {
     return request.headers;
+  }
+
+  private getBody(request: Request): any {
+    return request.body;
   }
 }
