@@ -7,7 +7,7 @@
 		src="https://github.com/nas-ts/nasts-core/blob/master/readme_assets/logo.png?raw=true"
 		style="vertical-align: middle;"
 	>
-	<div style="margin-left: 30px; display: flex; flex-direction: column;">
+	<div style="display: flex; flex-direction: column;">
 	<p align="center" style="font-weight: bold; font-size: 42px; margin: 0">
 		nasts
 	</p>
